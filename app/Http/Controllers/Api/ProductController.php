@@ -13,6 +13,16 @@ class ProductController extends Controller
         return Product::all();
     }
 
+    public function allByCategories(Request $request)
+    {
+        // Нужно вывести все товары, у которых category_id соответствуют переданным id в request
+        $category_ids = collect(explode(',', $request->post('category_ids')));
+        foreach ($category_ids as $category_id) {
+            $result[] = Product::all()->where('category_id', $category_id);
+        }
+        return $result;
+    }
+
     public function store(Request $request)
     {
         $request->validate([

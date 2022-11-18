@@ -31,7 +31,7 @@ class CategoryController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'id' => 'required|int|exists:categories',
+            'id' => 'required|int|exists:categories,id',
             'name' => 'required|string|max:255'
         ]);
 
