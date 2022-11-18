@@ -22,6 +22,3 @@ Route::get('products/all', [ProductController::class, 'all']);
 Route::post('products/store', [ProductController::class, 'store']);
 Route::post('products/update', [ProductController::class, 'update']);
 Route::post('products/delete', [ProductController::class, 'destroy']);
-
-
-Route::get('products/get_by_category', [ProductController::class, 'getByCategory']);
